@@ -1,4 +1,12 @@
+:root {
+  color-scheme: light;
+}
+
 * { box-sizing: border-box; }
+
+html, body {
+  background-color: #ffd1dc;
+}
 
 body {
   margin: 0;
@@ -147,7 +155,7 @@ button {
   to { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
-/* Partikel-Herzen (fixiert im Viewport) */
+/* Partikel-Herzen */
 .particle-heart {
   position: fixed;
   pointer-events: none;
