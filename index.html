@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Be my Valentine</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Screen 1: Cleanes 3D-Herz -->
+  <div id="screen1" class="screen active">
+    <div id="heart" aria-label="Herz drücken">
+      <svg viewBox="0 0 512 512" class="heart-svg" aria-hidden="true">
+        <defs>
+          <radialGradient id="heartGrad" cx="35%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#ff9fb2"/>
+            <stop offset="45%" stop-color="#ff4f73"/>
+            <stop offset="75%" stop-color="#e01f49"/>
+            <stop offset="100%" stop-color="#b80f2f"/>
+          </radialGradient>
+        </defs>
+        <path
+          d="M256 448
+             C128 360, 64 304, 64 208
+             C64 144, 112 96, 176 96
+             C212 96, 240 116, 256 144
+             C272 116, 300 96, 336 96
+             C400 96, 448 144, 448 208
+             C448 304, 384 360, 256 448 Z"
+          fill="url(#heartGrad)"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Screen 2: Frage -->
+  <div id="screen2" class="screen">
+    <div id="questionBox" class="card">
+      <h1>💘 Willst du mein Valentine sein?</h1>
+
+      <div class="button-row">
+        <button id="yes">Ja 💖</button>
+        <button id="no">Nein 🙈</button>
+      </div>
+    </div>
+
+    <div id="finalMessage" class="final hidden">
+      <h1>Ich bin dankbar, dass es dich in meinem Leben gibt. 💖</h1>
+	<p>Du bist etwas Besonderes für mich. </p>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
