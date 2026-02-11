@@ -21,7 +21,6 @@ function getClientPos(e) {
 }
 
 heart.addEventListener("pointerdown", (e) => {
-  e.preventDefault();
   const { x, y } = getClientPos(e);
   heart.dataset.px = x;
   heart.dataset.py = y;
@@ -29,7 +28,6 @@ heart.addEventListener("pointerdown", (e) => {
 });
 
 heart.addEventListener("pointerup", (e) => {
-  e.preventDefault();
   if (!heart.classList.contains("pressed")) return;
 
   const { x, y } = getClientPos(e);
@@ -41,46 +39,44 @@ heart.addEventListener("pointerup", (e) => {
   clicks++;
   scale += 0.1;
   heart.style.setProperty("--s", scale);
-  heart.style.transform = `scale(${scale})`;
+  heart.style.transform = `scale(${scale}) translateZ(0)`;
 
   heart.classList.add("glow");
-  setTimeout(() => heart.classList.remove("glow"), 120);
+  setTimeout(() => heart.classList.remove("glow"), 100);
 
   if (heartPath) {
     const warm = Math.min(1, clicks / maxClicks);
-    heartPath.style.filter = `saturate(${1 + warm * 0.2}) brightness(${1 + warm * 0.08})`;
+    heartPath.style.filter = `saturate(${1 + warm * 0.15}) brightness(${1 + warm * 0.05})`;
   }
 
-  // Partikel an exakter Klickposition
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 2; i++) {
     const p = document.createElement("div");
     p.className = "particle-heart";
     p.textContent = "💖";
-    p.style.left = (px + (Math.random() * 24 - 12)) + "px";
-    p.style.top  = (py + (Math.random() * 24 - 12)) + "px";
-    p.style.fontSize = (12 + Math.random() * 10) + "px";
+    p.style.left = (px + (Math.random() * 20 - 10)) + "px";
+    p.style.top  = (py + (Math.random() * 20 - 10)) + "px";
     document.body.appendChild(p);
-    setTimeout(() => p.remove(), 900);
+    setTimeout(() => p.remove(), 800);
   }
 
-  if (navigator.vibrate) navigator.vibrate(8);
+  if (navigator.vibrate) navigator.vibrate(5);
 
   if (clicks >= maxClicks && !transitioned) {
     transitioned = true;
 
     heart.style.animation = "none";
-    heart.style.transition = "transform 1000ms ease-in-out, opacity 500ms ease-in-out";
-    heart.style.transform = "scale(25)";
+    heart.style.transition = "transform 900ms ease-in-out, opacity 400ms ease-in-out";
+    heart.style.transform = "scale(22) translateZ(0)";
 
     setTimeout(() => {
       heart.style.opacity = "0";
-    }, 700);
+    }, 600);
 
     setTimeout(() => {
       screen1.classList.remove("active");
       screen2.classList.add("active", "fade-in");
       heart.style.pointerEvents = "none";
-    }, 900);
+    }, 800);
   }
 });
 
@@ -107,9 +103,9 @@ yesBtn.addEventListener("click", () => {
       h.className = "floating-heart";
       h.textContent = "💖";
       h.style.left = Math.random() * window.innerWidth + "px";
-      h.style.fontSize = (18 + Math.random() * 22) + "px";
+      h.style.fontSize = (18 + Math.random() * 20) + "px";
       document.body.appendChild(h);
-      setTimeout(() => h.remove(), 5000);
-    }, 220);
+      setTimeout(() => h.remove(), 4800);
+    }, 260);
   }
 });
