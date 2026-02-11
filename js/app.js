@@ -1,5 +1,5 @@
 let clicks = 0;
-const maxClicks = 10;
+const maxClicks = 1;
 let scale = 1;
 let transitioned = false;
 
