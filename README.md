@@ -39,3 +39,7 @@ git clone https://github.com/AlexYourGuy/valentine.git
 ## QR-Code
 
 ![Heart QR](assets/Valentine_QR-Code.png)
+
+## Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz und kann frei genutzt, angepasst und weiterverbreitet werden.
