@@ -5,7 +5,7 @@ Interaktive Ein-Seiten-Valentinsseite mit Herz-Klick-Intro, Übergang und Animat
 Live: [https://alexyourguy.github.io/valentine/]
 
 ## QR-Code
-![Heart QR](assets/qr-heart.png)
+![Heart QR](assets/Valentine_QR-Code.png)
 
 ## Features
 - Interaktives Herz (Klick → Wachstum → Übergang)
